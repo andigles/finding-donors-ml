@@ -10,6 +10,15 @@ This is a repository packaging of a Udacity-style supervised learning project: i
 - HTML report (easy to read in GitHub): `notebooks/finding_donors.html`
 - Udacity fork archive (for original context): [https://github.com/andigles/udacity-finding-donors-archive](https://github.com/andigles/udacity-finding-donors-archive)
 
+## Data
+
+This project expects a file at:
+
+- `data/census.csv`
+
+To run the notebook, copy `census.csv` into this folder.
+(For example, you can copy it from the archived Udacity repo)
+
 ## Results
 
 Replace the placeholders below with your final numbers.
@@ -66,11 +75,6 @@ jupyter nbconvert --to html notebooks/finding_donors.ipynb --output finding_dono
 - `src/` — optional reusable code (preprocessing, training, evaluation)
 - `reports/figures/` — saved plots used in the README/report
 - `data/` — dataset notes (and download instructions if you do not commit raw data)
-
-## Data
-
-- If you **do not** include the raw dataset in the repo, add a short explanation in `data/README.md` describing where the data comes from and how to obtain it.
-- If you **do** include data, keep it small and make sure you are allowed to distribute it.
 
 ## Next improvements
 
