@@ -1,0 +1,4 @@
+* text=auto
+
+# Keep Jupyter notebooks stable across OS
+*.ipynb text eol=lf
