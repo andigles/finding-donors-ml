@@ -208,3 +208,4 @@ __marimo__/
 
 # Data files (keep raw data out of git)
 data/*.csv
+TREE.txt
