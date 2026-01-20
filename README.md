@@ -1,93 +1,105 @@
-# Donor Income Classifier
+# Finding Donors (Income Prediction) — Case Study
 
-Predict whether a person earns more than **$50K/year** using census-like demographic data.
+Predict whether an individual earns **more than $50K/year** using census-like demographic data.  
+This is a **supervised learning** case study focused on **model comparison**, **hyperparameter tuning**, and **explaining results clearly**.
 
-This is a repository packaging of a Udacity-style supervised learning project: it keeps the core analysis, but makes the work easy to review and easy to run.
+**Best place to start:**
 
-## Quick links
+- 📘 Notebook: `notebooks/finding_donors.ipynb`
+- 🌐 HTML report (easy to read in GitHub): `notebooks/finding_donors.html`
 
-- Notebook: `notebooks/finding_donors.ipynb`
-- HTML report (easy to read in GitHub): `notebooks/finding_donors.html`
-- Udacity fork archive (for original context): [https://github.com/andigles/udacity-finding-donors-archive](https://github.com/andigles/udacity-finding-donors-archive)
+---
 
-## Data
+## Results summary
 
-This project expects a file at:
+This project prioritizes **F0.5** (F-beta score with beta=0.5), which weighs **precision** more than recall.
 
-- `data/census.csv`
+### Model comparison (test set, 100% training data)
 
-To run the notebook, copy `census.csv` into this folder.
-(For example, you can copy it from the archived Udacity repo)
+| Model | F0.5 (Test) | Training Time (s) | Prediction Time (s) |
+| --- | ---: | ---: | ---: |
+| Logistic Regression | 0.683 | 0.539 | 0.009 |
+| Random Forest | 0.680 | 4.626 | 0.245 |
+| AdaBoost | 0.703 | 1.966 | 0.162 |
 
-## Results
+**Selected approach:** AdaBoost (tuned) for best F0.5 with reasonable training time.
 
-Replace the placeholders below with your final numbers.
+> Tip: The notebook contains the full baseline comparison, tuning details, and interpretation.
 
-| Model | What it represents | Metric (fill with Accuracy / F1 / etc.) |
-| --- | --- | --- |
-| Naive baseline | Simple baseline to set a minimum bar | TODO |
-| Model A | First trained model (e.g., Logistic Regression) | TODO |
-| Model B | Second trained model (e.g., Random Forest) | TODO |
-| Best model | Best-performing model after tuning | **TODO** |
-
-Notes:
-
-- If you report more than one metric (for example Accuracy and F1 score), add more columns.
-- If the dataset is imbalanced, F1 score is often more informative than Accuracy.
+---
 
 ## How to run
 
-### Option 1: Windows + Git Bash (recommended)
+### 1) Create and activate an environment (Windows + Git Bash)
+
+From the repo root:
 
 ```bash
 python -m venv .venv
 source .venv/Scripts/activate
-python -m pip install --upgrade pip
+pip install --upgrade pip
 pip install -r requirements.txt
+```
+
+### 2) Add the dataset
+
+This project expects:
+
+- `data/census.csv`
+
+The repo does **not** include the dataset file. See `data/README.md` for instructions.
+
+### 3) Launch Jupyter
+
+```bash
 jupyter lab
 ```
 
-Then open:
+Open:
 
 - `notebooks/finding_donors.ipynb`
 
-### Option 2: macOS / Linux
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-jupyter lab
-```
-
-## Re-create the HTML report
-
-If you want to regenerate the HTML version from the notebook:
+(Optional) Export HTML:
 
 ```bash
 jupyter nbconvert --to html notebooks/finding_donors.ipynb --output finding_donors.html
 ```
 
-## Repository layout
+---
 
-- `notebooks/` — notebook + exported HTML report
-- `src/` — optional reusable code (preprocessing, training, evaluation)
-- `reports/figures/` — saved plots used in the README/report
-- `data/` — dataset notes (and download instructions if you do not commit raw data)
+## Repository structure
 
-## Next improvements
+- `notebooks/`
+  - `finding_donors.ipynb` — main case study notebook
+  - `finding_donors.html` — exported report for quick reading
+- `src/`
+  - `visuals.py` — helper plotting/visual utilities used by the notebook
+- `data/`
+  - `README.md` — where to place `census.csv` and how to obtain it
+- `reports/figures/`
+  - optional saved figures for README/report
 
-Pick a few that match your goals (do not do everything).
+---
 
-- Add a small script (for example `src/train.py`) to train/evaluate from the command line.
-- Add basic tests for preprocessing (for example checking missing values handling).
-- Add CI (continuous integration) with GitHub Actions to verify `pip install -r requirements.txt` works.
-- Add a short “model card” section: what the model is good at, what it struggles with, and risks.
+## Notes and next steps
+
+If extending this beyond a notebook:
+
+- Add threshold tuning (choose a decision threshold that matches outreach cost)
+- Add probability calibration (more reliable confidence scores)
+- Add fairness/bias checks across groups
+- Package preprocessing + training into reusable `src/` modules
+- Add automated checks (GitHub Actions) for install + basic imports
+
+---
 
 ## Attribution
 
-This project is based on a supervised learning project concept used in Udacity coursework.
+This project is based on the *Finding Donors* supervised learning project concept from Udacity.  
+Implementation, analysis, and packaging in this repository were done by **Andrés**.
 
-- Analysis, packaging, and repository structure: **Andrés**
-- Original course context and starter materials: Udacity (see the archived fork linked above)
+---
+
+## License
+
+See `LICENSE`.
