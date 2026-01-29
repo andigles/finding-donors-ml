@@ -10,7 +10,7 @@ This is a **supervised learning** case study focused on **model comparison**, **
 - 📘 Notebook: `notebooks/finding_donors.ipynb`
 - 🌐 HTML report (easy to read in GitHub): `docs/index.html`
 
-**Read the report (HTML):** [https://github.com/andigles/finding-donors-ml/blob/main/docs/index.html]
+**Read the report (HTML):** [https://andigles.github.io/finding-donors-ml/]
 
 ---
 
