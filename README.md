@@ -1,5 +1,7 @@
 # Finding Donors (Income Prediction) — Case Study
 
+[![CI](https://github.com/andigles/finding-donors-ml/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/andigles/finding-donors-ml/actions/workflows/ci.yml)
+
 Predict whether an individual earns **more than $50K/year** using census-like demographic data.  
 This is a **supervised learning** case study focused on **model comparison**, **hyperparameter tuning**, and **explaining results clearly**.
 
@@ -7,6 +9,8 @@ This is a **supervised learning** case study focused on **model comparison**, **
 
 - 📘 Notebook: `notebooks/finding_donors.ipynb`
 - 🌐 HTML report (easy to read in GitHub): `notebooks/finding_donors.html`
+
+**Read the report (HTML):** [https://github.com/andigles/finding-donors-ml/blob/main/notebooks/finding_donors.html]
 
 ---
 
