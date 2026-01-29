@@ -8,11 +8,11 @@ This is a **supervised learning** case study focused on **model comparison**, **
 **Best place to start:**
 
 - 📘 Notebook: `notebooks/finding_donors.ipynb`
-- 🌐 HTML report (easy to read in GitHub): `docs/finding_donors.html`
+- 🌐 HTML report (easy to read in GitHub): `docs/index.html`
 
-**Read the report (HTML):** 
+**Read the report (HTML):**
 
-[finding_donors.html](https://github.com/andigles/finding-donors-ml/blob/main/docs/finding_donors.html)
+[finding_donors.html](https://github.com/andigles/finding-donors-ml/blob/main/docs/index.html)
 
 ---
 
@@ -68,7 +68,7 @@ Open:
 (Optional) Export HTML:
 
 ```bash
-jupyter nbconvert --to html notebooks/finding_donors.ipynb --output docs/finding_donors.html
+jupyter nbconvert --to html notebooks/finding_donors.ipynb --output ../docs/index.html
 ```
 
 ---
